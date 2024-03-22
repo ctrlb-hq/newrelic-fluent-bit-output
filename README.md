@@ -1,3 +1,27 @@
+# CtrlB Changes
+1. Edited the endpoints:
+    * `cfg.Endpoint` in `config/config.go:parseNRClientConfig`
+    * `logsToMetricsUrlMapping` in `metrics/constants.go`
+2. Removed fields:
+    * `timestamp` - because our agent sets that
+3. Added fields:
+    * `ctrlb_isource`:`nri_agent` - so that we can tell these are our NR logs
+
+# How to build the agent for your system?
+## Just build the .so file
+* Make the endpoint changes.
+* make linux/amd64
+
+## Build the docker image
+* Make the endpoint changes.
+```
+docker build -t newrelic-fluent-bit-output .
+docker tag newrelic-fluent-bit-output ctrlb/ctrlb:newrelic-fluent-bit-output
+docker push ctrlb/ctrlb:newrelic-fluent-bit-output
+```
+
+
+
 [![Community Plus header](https://github.com/newrelic/opensource-website/raw/master/src/images/categories/Community_Plus.png)](https://opensource.newrelic.com/oss-category/#community-plus)
 
 # Fluent Bit output plugin for New Relic

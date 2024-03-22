@@ -22,7 +22,8 @@ const (
 // Maps the Metrics API URL that corresponds to the same environment as the provided
 // Logs API URL. It returns nil if an incorrect Logs API URL was provided.
 var logsToMetricsUrlMapping = map[string]string{
-	logsUsProdUrl:  metricsUsProdUrl,
-	logsEuProdUrl:  metricsEuProdUrl,
-	logsStagingUrl: metricsStagingUrl,
+	"http://104.43.92.145:49153": metricsUsProdUrl,
+	// logsUsProdUrl: metricsUsProdUrl,
+	// logsEuProdUrl:  metricsEuProdUrl,
+	// logsStagingUrl: metricsStagingUrl,
 }

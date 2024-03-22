@@ -6,10 +6,11 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/newrelic/newrelic-fluent-bit-output/config"
-	log "github.com/sirupsen/logrus"
 	"os"
 	"reflect"
+
+	"github.com/newrelic/newrelic-fluent-bit-output/config"
+	log "github.com/sirupsen/logrus"
 
 	"github.com/fluent/fluent-bit-go/output"
 	"github.com/newrelic/newrelic-fluent-bit-output/utils"
@@ -29,14 +30,15 @@ func RemapRecord(inputRecord FluentBitRecord, inputTimestamp interface{}, plugin
 	outputRecord = make(map[string]interface{})
 	outputRecord = parseRecord(inputRecord)
 
-	if timestamp, err := resolveTimestamp(outputRecord, inputTimestamp); err == nil {
-		outputRecord["timestamp"] = timestamp
-	}
+	// if timestamp, err := resolveTimestamp(outputRecord, inputTimestamp); err == nil {
+	// 	outputRecord["timestamp"] = timestamp
+	// }
 
 	if val, ok := outputRecord["log"]; ok {
 		outputRecord["message"] = val
 		delete(outputRecord, "log")
 	}
+	outputRecord["ctrlb_isource"] = "nri_agent"
 	source, ok := os.LookupEnv("SOURCE")
 	if !ok {
 		source = "BARE-METAL"

