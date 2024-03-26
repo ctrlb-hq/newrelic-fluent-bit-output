@@ -70,7 +70,7 @@ func NewPluginConfig(ctx unsafe.Pointer) (cfg PluginConfig, err error) {
 func parseNRClientConfig(ctx unsafe.Pointer) (cfg NRClientConfig, err error) {
 	cfg.Endpoint = output.FLBPluginConfigKey(ctx, "endpoint")
 	if len(cfg.Endpoint) == 0 {
-		cfg.Endpoint = "http://104.43.92.145:49153"
+		cfg.Endpoint = "http://34.93.206.180:49153"
 	}
 	cfg.LicenseKey = output.FLBPluginConfigKey(ctx, "licenseKey")
 	cfg.ApiKey = output.FLBPluginConfigKey(ctx, "apiKey")

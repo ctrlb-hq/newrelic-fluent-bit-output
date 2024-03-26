@@ -16,8 +16,8 @@
 * Make the endpoint changes.
 ```
 docker build -t newrelic-fluent-bit-output .
-docker tag newrelic-fluent-bit-output ctrlb/ctrlb:newrelic-fluent-bit-output
-docker push ctrlb/ctrlb:newrelic-fluent-bit-output
+docker tag newrelic-fluent-bit-output ctrlb/ctrlb:newrelic-fluent-bit-output-<company tag>
+docker push ctrlb/ctrlb:newrelic-fluent-bit-output-<company tag>
 ```
 
 
