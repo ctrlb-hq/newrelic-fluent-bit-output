@@ -6,14 +6,17 @@
     * `timestamp` - because our agent sets that
 3. Added fields:
     * `ctrlb_isource`:`nri_agent` - so that we can tell these are our NR logs
+    * header: `X-CtrlB-License`.
 
 # How to build the agent for your system?
 ## Just build the .so file
 * Make the endpoint changes.
+* Set the header correctly in `X-CtrlB-License`
 * make linux/amd64
 
 ## Build the docker image
 * Make the endpoint changes.
+* Set the header correctly in `X-CtrlB-License`
 ```
 docker build -t newrelic-fluent-bit-output .
 docker tag newrelic-fluent-bit-output ctrlb/ctrlb:newrelic-fluent-bit-output-<company tag>
