@@ -22,7 +22,7 @@ const (
 // Maps the Metrics API URL that corresponds to the same environment as the provided
 // Logs API URL. It returns nil if an incorrect Logs API URL was provided.
 var logsToMetricsUrlMapping = map[string]string{
-	"https://gocomet-1.oversight.ctrlb.ai/source_NewRelic_log_vm": metricsUsProdUrl,
+	"https://gocomet-3.oversight.ctrlb.ai/source_NewRelic_log_vm": metricsUsProdUrl,
 	// logsUsProdUrl: metricsUsProdUrl,
 	// logsEuProdUrl:  metricsEuProdUrl,
 	// logsStagingUrl: metricsStagingUrl,
