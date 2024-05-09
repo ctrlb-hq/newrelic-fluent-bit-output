@@ -70,7 +70,7 @@ func NewPluginConfig(ctx unsafe.Pointer) (cfg PluginConfig, err error) {
 func parseNRClientConfig(ctx unsafe.Pointer) (cfg NRClientConfig, err error) {
 	cfg.Endpoint = output.FLBPluginConfigKey(ctx, "endpoint")
 	if len(cfg.Endpoint) == 0 {
-		cfg.Endpoint = "https://gocomet-3.oversight.ctrlb.ai/source_NewRelic_log_vm"
+		cfg.Endpoint = "xxx"
 	}
 	cfg.LicenseKey = output.FLBPluginConfigKey(ctx, "licenseKey")
 	cfg.ApiKey = output.FLBPluginConfigKey(ctx, "apiKey")

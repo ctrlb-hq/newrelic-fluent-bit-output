@@ -104,11 +104,7 @@ func (nrClient *NRClient) sendPacket(buffer *bytes.Buffer) (status int, err erro
 	} else {
 		req.Header.Add("X-License-Key", nrClient.config.LicenseKey)
 	}
-	if nrClient.config.LicenseKey != "" {
-		req.Header.Add("X-CtrlB-License", nrClient.config.LicenseKey)
-	} else {
-		req.Header.Add("X-CtrlB-License", "XXX")
-	}
+	req.Header.Add("X-CtrlB-License", "xxx")
 	req.Header.Add("Content-Encoding", "gzip")
 	req.Header.Add("Content-Type", "application/json")
 	resp, err := nrClient.client.Do(req)
